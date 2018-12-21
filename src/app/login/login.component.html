@@ -3,16 +3,21 @@
       Mailing Service    
   </mat-card-title>
 <mat-card-content>    
-<form class="example-form">
-<mat-form-field class="example-full-width">
+<form>
+<mat-form-field class="login-full-width">
   <input matInput placeholder="E Mail">
+  <mat-hint>Errors appear instantly!</mat-hint>
+  <mat-error>E</mat-error>
 </mat-form-field>
 <br>
 <mat-form-field class="example-full-width">
-  <textarea matInput placeholder="Password"></textarea>
+  <input matInput placeholder="Password">
 </mat-form-field>
 <br>
-<button (click)="goDashboard()" mat-raised-button color="accent">Login</button>
+<span>
+<button class="login-button" (click)="goDashboard()" mat-raised-button color="accent">Login</button>
+</span>
+<button (click)="onForgetClick()" mat-raised-button color="accent">Register</button>
 </form>
 </mat-card-content>    
 </mat-card>  

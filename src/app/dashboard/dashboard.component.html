@@ -1,13 +1,61 @@
-<mat-toolbar role="heading" color="primary">My App</mat-toolbar>
+
+
 <mat-sidenav-container class="dashboard-container">
+        <mat-toolbar layout="row">My App</mat-toolbar>   
   <mat-sidenav class="menu-sidenav" opened mode="side">
+      
+      <mat-card>
+          <mat-card-content>
+              <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-title>Srini</mat-card-title>
+              <mat-card-subtitle>Developer</mat-card-subtitle>
+             
+          </mat-card-content>
+        </mat-card>
     <mat-list>
+            <mat-list-item> 
+        <button mat-raised-button>Compose</button>
+            </mat-list-item> 
       <mat-list-item> 
-          <mat-icon mat-list-icon>folder</mat-icon><p>Inbox</p> </mat-list-item>
-      <mat-list-item> Salt </mat-list-item>
-      <mat-list-item> Paprika </mat-list-item>
+          <mat-icon mat-list-icon>folder</mat-icon><p>Inbox</p> 
+        </mat-list-item>
+        <mat-list-item> 
+              <mat-icon mat-list-icon>folder</mat-icon><p>Sent</p> 
+        </mat-list-item>
+        <mat-list-item> 
+                <mat-icon mat-list-icon>folder</mat-icon><p>Starred</p> 
+        </mat-list-item>
+        <mat-list-item> 
+                  <mat-icon mat-list-icon>folder</mat-icon><p>Draft</p> 
+        </mat-list-item>
+        <mat-list-item> 
+            <mat-icon mat-list-icon>folder</mat-icon><p>Trash</p> 
+        </mat-list-item>
      </mat-list>
   </mat-sidenav>
-  <mat-sidenav class="mail-list-sidenav"opened mode="side" position="end">End content</mat-sidenav>
-  Implicit main content
+ <mat-sidenav-content class="mail-sidenav-content">
+        <div class="sidemenu-content"
+        fxLayout
+        fxLayout.xs="row"
+        fxLayoutAlign="start none"
+        fxLayoutGap="20px"
+        fxLayoutGap.xs="0">
+        <div fxFlex="30%"  >
+                <mat-list class="mail-list">
+                <mat-list-item  *ngFor = "let mail of mails">
+                        <img matListAvatar src="blank-profile-picture.png" alt="...">
+                  <h1 matLine> {{mail.sender}}</h1>
+                  <h2 matLine>{{mail.subject}}</h2>
+                  <p matLine class="demo-2"> {{mail.content}}</p>
+                  <mat-divider></mat-divider>
+                </mat-list-item>
+              </mat-list>
+          </div>
+          <div class="content-div" fxFlex="70%" fxFlexOrder="3">Item 2</div>
+          </div>
+        
+      
+ </mat-sidenav-content>
 </mat-sidenav-container>
+
+
